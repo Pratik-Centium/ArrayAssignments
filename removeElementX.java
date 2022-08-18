@@ -2,7 +2,23 @@ package Assignment12;
 
 public class removeElementX {
 
-	public static String [] m1(int [] arr, int val)
+	public static int [] m2(int [] arr , int len,int val)
+	{
+		int [] brr = new int[len];
+		int j=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			
+			if(arr[i]!=val)
+			{
+				brr[j]=arr[i];
+				j++;
+			}
+		}
+		
+		return brr;
+	}
+	public static int[]  m1(int [] arr, int val)
 	{
 		int icnt=0;
 		for(int i=0;i<arr.length;i++)
@@ -13,37 +29,21 @@ public class removeElementX {
 			}
 		}
 		
-		String [] brr= new String[arr.length];
-		int j=0;
-		int k=brr.length-icnt;
+     	int j=0;
+		int k=arr.length-icnt;
 		
-//		System.out.println(k);
+	
+		
+		return m2(arr,k,val);
 		
 		
-		for(int i=0;i<arr.length;i++)
-		{
-			if(arr[i]!=val)
-			{
-				brr[j]=String.valueOf(arr[i]);
-				j++;
-				
-			}
-			else
-			{
-				brr[k]="_";
-				k++;
-				
-			}
-		}
-		
-		return brr;
 		
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] arr = {3,2,2,3,3};
-		int val=3;
-		String [] brr= m1(arr,val);
+		int [] arr = {2,4,8,4,2,1,4,4,5};
+		int val=4;
+		int [] brr= m1(arr,val);
 		System.out.print("Array is : ");
 		
 		
